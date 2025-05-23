@@ -189,7 +189,7 @@ class PaymentsCreateResponse implements ArrayAccess
      * Gets payment_id
      * @return string
      */
-    public function getPaymentId()
+    public function getPaymentId(): ?string
     {
         return $this->payment_id;
     }
@@ -199,7 +199,7 @@ class PaymentsCreateResponse implements ArrayAccess
      * @param string $payment_id Identificador único del pago, es una cadena alfanumérica de 12 caracteres. Cómo este identificador es único, se puede usar, por ejemplo, para evitar procesar una notificación repetida. (Khipu espera un código 200 al notificar un pago, si esto no ocurre se reintenta hasta por dos días).
      * @return $this
      */
-    public function setPaymentId($payment_id)
+    public function setPaymentId(string $payment_id): self
     {
         
         $this->payment_id = $payment_id;
@@ -376,41 +376,41 @@ class PaymentsCreateResponse implements ArrayAccess
     
     /**
      * Returns true if offset exists. False otherwise.
-     * @param  integer $offset Offset 
-     * @return boolean
+     * @param  mixed $offset Offset 
+     * @return bool
      */
-    public function offsetExists($offset)
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->$offset);
     }
   
     /**
      * Gets offset.
-     * @param  integer $offset Offset 
+     * @param  mixed $offset Offset 
      * @return mixed 
      */
-    public function offsetGet($offset)
+    public function offsetGet(mixed $offset): mixed
     {
         return $this->$offset;
     }
   
     /**
      * Sets value based on offset.
-     * @param  integer $offset Offset 
-     * @param  mixed   $value  Value to be set
+     * @param  mixed $offset Offset 
+     * @param  mixed $value  Value to be set
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet(mixed $offset, mixed $value): void
     {
         $this->$offset = $value;
     }
   
     /**
      * Unsets offset.
-     * @param  integer $offset Offset 
+     * @param  mixed $offset Offset 
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->$offset);
     }
